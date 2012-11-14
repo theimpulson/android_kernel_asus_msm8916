@@ -84,7 +84,7 @@ if [ ! -z "$ASUS_BUILD_KERNEL_VERSION" ];then
   echo \#define ASUS_BUILD_KERNEL_VERSION \"`echo $ASUS_BUILD_KERNEL_VERSION | $UTS_TRUNCATE`\"
 fi  
   
-  echo \#define LINUX_COMPILER \"`$CC -v 2>&1 | tail -n 1`\"
+  echo \#define LINUX_COMPILER \"`$CC -v 2>&1 | grep ' version '`\"
 ) > .tmpcompile
 
 # Only replace the real compile.h if the new one is different,
